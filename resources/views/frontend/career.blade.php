@@ -122,6 +122,7 @@
 
 
             <!-- Job Opening Section Start -->
+            @if($jobopening->count())
             <div class="jo-section" id="openings">
                 <div class="title text-center">
                     <h1>Job Openings</h1>
@@ -161,6 +162,7 @@
                     </div>
                 </div>
             </div>
+            @endif
 
 
 

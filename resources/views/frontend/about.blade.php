@@ -179,7 +179,7 @@
                         <div class="detail p-4">
                             <h4>{!!$value->name!!}</h4>
                             <h6>{{$value->position_name}}</h6>
-                            <p>{{Str::limit($value->description,550)}}<p>
+                            {{-- <p>{{Str::limit($value->description,550)}}<p> --}}
                         </div>
                     </div>
                     @endforeach

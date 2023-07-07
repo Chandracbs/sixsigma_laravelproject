@@ -4,7 +4,7 @@ namespace App\Services;
 use App\Models\Image;
 use App\Models\Process;
 use Illuminate\Http\Request;
-use App\Services\imageService;
+use App\Services\ImageService;
 use Illuminate\Validation\Rule;
 
 class ProcessService{

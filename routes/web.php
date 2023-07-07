@@ -38,9 +38,7 @@ use App\Models\ContactUs;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('home');
-});
+Route::get('/',[IndexController::class,'home']);
 
 Auth::routes(['register'=>false]);
 

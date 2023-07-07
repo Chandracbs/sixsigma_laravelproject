@@ -18,7 +18,7 @@
                                 exceptional results.</p>
                         </div>
                         <div>
-                            <a href="#" class="btn mt-3">Get Started</a>
+                            {{-- <a href="#" class="btn mt-3">Get Started</a> --}}
                         </div>
                     </div>
                 </div>

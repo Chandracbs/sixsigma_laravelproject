@@ -60,7 +60,7 @@ class IndexController extends Controller
         $validator = Validator::make($request->all(),[
             'name'=>'required|max:100',
             'phone'=>'required|max:15|min:7|regex:/^([0-9\s\-\+\(\)]*)$/',
-            'email'=>'required|email|unique:contact_us,email|max:255',
+            'email'=>'required|email|max:255',
             'message'=>'required',
             'interest'=>'required|max:50'
         ],[
@@ -94,7 +94,11 @@ class IndexController extends Controller
             'message'=>'required'
         ]);
 
-        Mail::to('chandra20163@gmail.com')->send(new ContactUsMail($validatedValue));
+        $contactMail = new ContactUsMail($validatedValue);
+
+        $contactMail->from($request->email, $request->name);
+
+        Mail::to('info@sixsigmainc.com.np')->send($contactMail);
 
         return back()->withFragment('#contactform')->with('message','Your message has been sent successfully.');
 
@@ -106,7 +110,7 @@ class IndexController extends Controller
             'c_name'=>'required|max:150',
             'company_name'=>'required|max:150',
             'c_email'=>'required|max:255|email',
-            'c_contact'=>'required|max:15|min:7|regex:/^([0-9\s\-\+\(\)]*)$/',
+            'c_contact'=>'required|max:15|min:10|regex:/^([0-9\s\-\+\(\)]*)$/',
             'c_message'=>'required'
         ],[
             'c_email.email'=>'The email field must be a valid email address.',
@@ -120,7 +124,13 @@ class IndexController extends Controller
             return back()->withFragment('#validateconsultationform')->withErrors($validator)->withInput();
         }
         else{
-            Mail::to('chandra20163@gmail.com')->send(new ConsultationMail($request->all()));
+
+            $consultantMail = new ConsultationMail($request->all());
+
+            $consultantMail->from($request->c_email, $request->c_name);
+
+            Mail::to('info@sixsigmainc.com.np')->send($consultantMail);
+
             return back()->withFragment('#consultationform')->with('message','Your message has been sent successfully.');
         }
     }

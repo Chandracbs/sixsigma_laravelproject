@@ -462,6 +462,7 @@
 
 
         {{-- Job Opening - Section --}}
+        @if($jobopening->count())
         <div class="jobopening-section">
             <div class="container">
                 <div class="row text-center">
@@ -493,6 +494,7 @@
                 </div>
             </div>
         </div>
+        @endif
         {{-- End --}}
 
 

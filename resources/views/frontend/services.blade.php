@@ -45,8 +45,8 @@
                                         <h3>{{$value->name}}</h3>
                                     </div>
                                     <div class="learn-more-btn mt-4">
-                                        <a href="#" class="btn">Learn More<i
-                                                class="fa-solid fa-arrow-right ms-3"></i></a>
+                                        {{-- <a href="#" class="btn">Learn More<i
+                                                class="fa-solid fa-arrow-right ms-3"></i></a> --}}
                                     </div>
                                 </div>
                             </div>

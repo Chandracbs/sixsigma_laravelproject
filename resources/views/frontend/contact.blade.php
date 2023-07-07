@@ -91,12 +91,12 @@
                                     </div>
                                     <div class="mt-2 col-lg-6 your-intrest box">
                                         <div class="form-group">
-                                            <label for="">Select Your Interest</label>
+                                            <label for="">Select Your Project Type</label>
                                             <select class="form-control" id="exampleFormControlSelect1" name="interest"
                                                 value="{{ old('interest') }}">
                                                 <option value="Web Development">Web Development</option>
-                                                <option value="Frontend">Frontend</option>
-                                                <option value="Laravel Development">Laravel Development</option>
+                                                <option value="Software Development">Software Development</option>
+                                                <option value="Mobile Apps">Mobile Apps</option>
                                                 <option value="UI/UX">UI/UX</option>
                                             </select>
                                             @if ($errors->has('interest'))
@@ -113,7 +113,7 @@
                                         <span class="text-xs text-danger">{{ $errors->first('message') }}</span>
                                     @endif
                                 </div>
-                                <button class="btn btn-success text-center mt-4" type="submit" onclick="scrollToDiv()">Send
+                                <button class="btn btn-success text-center mt-4" type="submit" >Send
                                     Message</button>
                                 {{-- <div class="btn btn-success text-center mt-4">Send Message</div> --}}
                             </div>
