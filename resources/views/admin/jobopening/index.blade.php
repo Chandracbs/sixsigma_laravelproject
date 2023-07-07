@@ -67,8 +67,8 @@
                         </span>
                     </div>
                 </th>
-                <th class="px-4 py-3">Position Name</th>
                 <th class="px-4 py-3">Image</th>
+                <th class="px-4 py-3">Position Name</th>
                 <th class="px-4 py-3">
                     <div class="flex items-center">
                         <span class="mr-2">Created At</span>

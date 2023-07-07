@@ -26,7 +26,7 @@ class ContactUsController extends Controller
 
     public function store(Request $request){
         $this->contactUsService->store($request);
-        return redirect()->route('contactus.index');
+        return redirect()->route('contactus.index')->with('message','Contact added Successfully');
     }
 
     public function edit(string $id){
@@ -36,13 +36,13 @@ class ContactUsController extends Controller
 
     public function update(Request $request, string $id){
         $this->contactUsService->update($request,$id);
-        return redirect()->route('contactus.index');
+        return redirect()->route('contactus.index')->with('message','Contact deleted Successfully');
 
     }
 
     public function destroy(string $id){
         $this->contactUsService->destroy($id);
-        return redirect()->route('contactus.index');
+        return redirect()->route('contactus.index')->with('message','Contact deleted Successfully');
     }
 
 }
