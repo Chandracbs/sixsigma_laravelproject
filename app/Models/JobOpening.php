@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Image;
 
 class JobOpening extends Model
 {
@@ -14,4 +15,8 @@ class JobOpening extends Model
         'vacancy_no',
         'description'
     ];
+
+    public function image(){
+        return $this->morphOne(Image::class,'imageable');
+    }
 }

@@ -32,17 +32,17 @@ class JobOpeningController extends Controller
 
     public function store(Request $request){
         $this->jobOpeningService->store($request);
-        return redirect()->route('jobopening.index');
+        return redirect()->route('jobopening.index')->with('message','Job added Successfully');
     }
 
     public function update(Request $request, string $id){
         $this->jobOpeningService->update($request,$id);
-        return redirect()->route('jobopening.index');
+        return redirect()->route('jobopening.index')->with('message','Job updated Successfully');
     }
 
     public function destroy(string $id){
         $this->jobOpeningService->destroy($id);
-        return redirect()->route('jobopening.index');
+        return redirect()->route('jobopening.index')->with('message','Job deleted Successfully');
 
     }
 

@@ -151,7 +151,7 @@
                 </td>
 
                 <td class="px-4 py-3 text-sm">
-                    {{$value->description}}
+                    {{Str::limit($value->description,30)}}
                 </td>
 
 

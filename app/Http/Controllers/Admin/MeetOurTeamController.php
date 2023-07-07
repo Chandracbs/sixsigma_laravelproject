@@ -25,7 +25,7 @@ class MeetOurTeamController extends Controller
 
     public function store(Request $request){
         $this->meetOurTeamService->store($request);
-        return redirect()->route('meetourteam.index');
+        return redirect()->route('meetourteam.index')->with('message','Team added Successfully');
     }
 
     public function edit(string $id){
@@ -35,12 +35,12 @@ class MeetOurTeamController extends Controller
 
     public function update(Request $request, string $id){
         $this->meetOurTeamService->update($request,$id);
-        return redirect()->route('meetourteam.index');
+        return redirect()->route('meetourteam.index')->with('message','Team updated Successfully');
     }
 
     public function destroy(string $id){
         $this->meetOurTeamService->destroy($id);
-        return redirect()->route('meetourteam.index');
+        return redirect()->route('meetourteam.index')->with('message','Team deleted Successfully');
     }
 
 }

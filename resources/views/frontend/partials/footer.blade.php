@@ -24,7 +24,7 @@
                     <div class="row">
                         <h4>Join</h4></a>
                         <a href="{{route('career')}}" style="text-decoration: none"><h5>Carrer</h5></a>
-                        <h5>Internship</h5></a>
+                        <a href="{{route('career')}}" style="text-decoration: none"><h5>Internship</h5></a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 contact-us">
@@ -35,7 +35,7 @@
                         <div class="location">
                             <div class="row">
                                 <i class="mt-4 fa-solid fa-location-dot col-md-1"></i>
-                                <p class="col-md-10">Kamladi, Kathmandu, Nepal <br> Office hours: 9:30 AM - 5:00 PM
+                                <p class="col-md-10">Kamladi, Kathmandu, Nepal <br> Office hours: 9:00 AM - 5:00 PM
                                     (Sun -
                                     Fri)</p>
                             </div>
@@ -43,22 +43,22 @@
                         <div class="phone-no">
                             <div class="row">
                                 <i class="fa-solid fa-phone col-md-1"></i>
-                                <p class="col-md-10">+977 9813917313</p>
+                                <a href="tel:+977 9813917313" class="col-md-10" style="text-decoration: none; color:white;">+977 9813917313</a>
                             </div>
                         </div>
                         <div class="email">
                             <div class="row">
                                 <i class="fa-solid fa-envelope col-md-1"></i>
-                                <p class="col-md-10">info@sixsigmainc.com.np</p>
+                                <a href="mailto:info@sixsigmainc.com.np" class="col-md-10 mb-2" style="text-decoration: none; color:white;">info@sixsigmainc.com.np</a>
                             </div>
                         </div>
                         <div class="footer-social">
                             <div class="row">
-                                <div class="col-md-1 ms-2 icon"><a href="#" class="text-white"><i
-                                            class="fa-brands fa-twitter"></i></a></div>
-                                <div class="col-md-1 ms-2 icon"><a href="#" class="text-white"><i
+                                <div class="col-md-1 ms-2 icon"><a href="https://www.youtube.com/@GadgetFrame/" target="_blank" class="text-white"><i
+                                            class="fa-brands fa-youtube"></i></a></div>
+                                <div class="col-md-1 ms-2 icon"><a href="https://www.instagram.com/sixsigmainc/" target="_blank" class="text-white"><i
                                             class="fa-brands fa-instagram"></i></a></div>
-                                <div class="col-md-1 ms-2 icon"><a href="#" class="text-white"><i
+                                <div class="col-md-1 ms-2 icon"><a href="https://www.facebook.com/sixsigmaincofficial/" target="_blank" class="text-white"><i
                                             class="fa-brands fa-facebook-f"></i></a></div>
                             </div>
                         </div>

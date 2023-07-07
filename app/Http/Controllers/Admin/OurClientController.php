@@ -28,7 +28,7 @@ class OurClientController extends Controller
 
     public function store(Request $request){
         $this->ourClientService->store($request);
-        return redirect()->route('ourclient.index');
+        return redirect()->route('ourclient.index')->with('message','Client added Successfully');
     }
 
     public function edit(string $id){
@@ -38,12 +38,12 @@ class OurClientController extends Controller
 
     public function update(Request $request, string $id){
         $this->ourClientService->update($request,$id);
-        return redirect()->route('ourclient.index');
+        return redirect()->route('ourclient.index')->with('message','Client updated Successfully');
     }
 
     public function destroy(string $id){
         $this->ourClientService->destroy($id);
-        return redirect()->route('ourclient.index');
+        return redirect()->route('ourclient.index')->with('message','Client deleted Successfully');
     }
 
 

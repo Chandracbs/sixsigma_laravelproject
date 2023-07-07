@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class JobOpeningService{
 
+    private $imageService;
+
+    public function __construct(){
+        $this->imageService = new ImageService();
+    }
+
     public function getAll(Request $request){
         $search = $request->search??"";
         $orderBy = $request->query('orderBy','position_name');
@@ -27,27 +33,27 @@ class JobOpeningService{
     public function store(Request $request){
         $validatedValue = $request->validate([
             'position_name'=>'required|max:50',
-            'vacancy_no'=>'required|numeric|max:1000',
-            'description'=>'required'
+            'vacancy_no'=>'required|numeric|max:1000'
         ]);
-        $jobopening = JobOpening::create($validatedValue);
+        $model = JobOpening::create($validatedValue);
+        $this->imageService->store($model, $request->image, 'images/jobopenings',true,500,500);
     }
 
     public function update(Request $request, string $id){
         $validatedValue = $request->validate([
             'position_name'=>'required|max:50',
             'vacancy_no'=>'required|numeric|max:1000',
-            'description'=>'required'
         ]);
-        $jobopening = JobOpening::findOrFail($id);
-        $jobopening->update($validatedValue);
+        $model = JobOpening::findOrFail($id);
+        $model->update($validatedValue);
+        $this->imageService->update($model,$request->image,'images/jobopenings',true,500,500);
     }
 
 
 
     public function destroy(string $id){
-        $jobopening = JobOpening::findOrFail($id);
-        $jobopening->delete();
+        $model = JobOpening::findOrFail($id);
+        $this->imageService->destroy($model);
     }
 
 }

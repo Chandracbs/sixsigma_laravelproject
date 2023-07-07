@@ -32,17 +32,17 @@ class TestimonialController extends Controller
 
     public function store(Request $request){
         $this->testimonialService->store($request);
-        return redirect()->route('testimonial.index');
+        return redirect()->route('testimonial.index')->with('message','Testimonial added Successfully');
     }
 
     public function update(Request $request, string $id){
         $this->testimonialService->update($request,$id);
-        return redirect()->route('testimonial.index');
+        return redirect()->route('testimonial.index')->with('message','Testimonial updated Successfully');
     }
 
     public function destroy(string $id){
         $this->testimonialService->destroy($id);
-        return redirect()->route('testimonial.index');
+        return redirect()->route('testimonial.index')->with('message','Testimonial deleted Successfully');
 
     }
 

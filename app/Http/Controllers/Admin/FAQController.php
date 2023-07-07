@@ -26,7 +26,7 @@ class FAQController extends Controller
 
     public function store(Request $request){
         $this->faqService->store($request);
-        return redirect()->route('faq.index');
+        return redirect()->route('faq.index')->with('message','FAQ added Successfully');
     }
 
     public function edit(string $id){
@@ -36,13 +36,13 @@ class FAQController extends Controller
 
     public function update(Request $request, string $id){
         $this->faqService->update($request,$id);
-        return redirect()->route('faq.index');
+        return redirect()->route('faq.index')->with('message','FAQ updated Successfully');
 
     }
 
     public function destroy(string $id){
         $this->faqService->destroy($id);
-        return redirect()->route('faq.index');
+        return redirect()->route('faq.index')->with('message','FAQ deleted Successfully');
     }
 
 }

@@ -40,7 +40,7 @@
     @include('frontend.partials.header')
     @yield('content')
     @include('frontend.partials.footer')
-    @section('script')
+    @yield('script')
 
 
 

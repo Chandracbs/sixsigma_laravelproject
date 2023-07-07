@@ -24,7 +24,7 @@ class ContactUsService{
         $validatedValue = $request->validate([
             'name'=>'required|max:100',
             'phone'=>'required|max:15|min:7|regex:/^([0-9\s\-\+\(\)]*)$/',
-            'email'=>'required|email|unique:contact_us,email|max:255',
+            'email'=>'required|email|max:255',
             'message'=>'required',
             'interest'=>'required|max:50'
         ],[
@@ -51,7 +51,7 @@ class ContactUsService{
             'interest.required'=>'Please select your interest'
         ]);
         $contactus = ContactUs::findOrFail($id);
-        $contactus->update($validatedValue);
+        return $contactus->update($validatedValue);
 
     }
 

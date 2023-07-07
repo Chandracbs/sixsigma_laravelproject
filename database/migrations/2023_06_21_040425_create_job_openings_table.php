@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('position_name',50);
             $table->integer('vacancy_no')->length(3);
-            $table->text('description');
             $table->timestamps();
         });
     }

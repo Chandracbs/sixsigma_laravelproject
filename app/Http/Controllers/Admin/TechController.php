@@ -30,17 +30,17 @@ class TechController extends Controller
 
     public function store(Request $request){
         $this->techService->store($request);
-        return redirect()->route('technology.index');
+        return redirect()->route('technology.index')->with('message','Technology added Successfully');
     }
 
     public function update(Request $request, string $id){
         $this->techService->update($request,$id);
-        return redirect()->route('technology.index');
+        return redirect()->route('technology.index')->with('message','Technology updated Successfully');
     }
 
     public function destroy(string $id){
         $this->techService->destroy($id);
-        return redirect()->route('technology.index');
+        return redirect()->route('technology.index')->with('message','Technology deleted Successfully');
     }
 
 }

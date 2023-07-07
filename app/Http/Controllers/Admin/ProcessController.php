@@ -27,7 +27,7 @@ class ProcessController extends Controller
 
     public function store(Request $request){
         $this->processService->store($request);
-        return redirect()->route('process.index');
+        return redirect()->route('process.index')->with('message','Process added Successfully');
     }
 
     public function edit(string $id){
@@ -39,12 +39,12 @@ class ProcessController extends Controller
 
     public function update(Request $request, string $id){
         $process = $this->processService->update($request,$id);
-        return redirect()->route('process.index',compact('process'));
+        return redirect()->route('process.index',compact('process'))->with('message','Process updated Successfully');
     }
 
     public function destroy(string $id){
         $this->processService->destroy($id);
-        return redirect()->route('process.index');
+        return redirect()->route('process.index')->with('message','Process deleted Successfully');
     }
 
 

@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="col-md-7 rm-btn">
                                     <p>Want to know how we stand out?</p>
-                                    <a href="web-development.htm" class="btn text-white mt-0">Read More <i
+                                    <a href="{{route('about')}}" class="btn text-white mt-0">Read More <i
                                             class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -119,11 +119,10 @@
                                 <h3>Building Better Solutions</h3>
                             </div>
                             <div class="subtitle ">
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem incidunt
-                                    perferendis doloremque animi?</p>
+                                <p>With our expertise and dedication, we strive to deliver top-notch services across various domains, including web design, development, UI/UX, digital marketing, and more.</p>
                             </div>
                             <div class="get-str-btn mb-3">
-                                <a href="#" class="btn btn-outline-primary">Get Started</a>
+                                <a href="{{route('webdev')}}" class="btn btn-outline-primary">Get Started</a>
                             </div>
                         </div>
                     </div>
@@ -140,64 +139,16 @@
                                             <h3>{{ $value->name }}</h3>
                                         </div>
                                         <div class="subtitle">
-                                            <p>{{ Str::limit($value->description, 150) }}</p>
+                                            <p>{{$value->description}}</p>
                                         </div>
-                                        <a class="box-botton" href="#">Learn More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
+                                        {{-- learnmore button --}}
+
+                                        {{-- <a class="box-botton" href="#">Learn More <i
+                                                class="fa-solid fa-arrow-right"></i></a> --}}
                                     </div>
                                 </div>
                             @endforeach
 
-                            {{-- <div class="box col-md-6">
-                                <div class="box-image">
-                                    <img src="assets/images/icons/solutions/monitor.png" class="icon" alt="">
-                                </div>
-                                <div class="box-detail">
-                                    <div class="title">
-                                        <h3>Design</h3>
-                                    </div>
-                                    <div class="subtitle">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque corrupti
-                                            molestias voluptatum.</p>
-                                    </div>
-                                    <a class="box-botton" href="#">Learn More <i
-                                            class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="box col-md-6">
-                                <div class="box-image">
-                                    <img src="assets/images/icons/solutions/monitor.png" class="icon" alt="">
-                                </div>
-                                <div class="box-detail">
-                                    <div class="title">
-                                        <h3>Design</h3>
-                                    </div>
-                                    <div class="subtitle">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque corrupti
-                                            molestias voluptatum.</p>
-                                    </div>
-                                    <a class="box-botton" href="#">Learn More <i
-                                            class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="box col-md-6">
-                                <div class="box-image">
-                                    <img src="assets/images/icons/solutions/monitor.png" class="icon" alt="">
-                                </div>
-                                <div class="box-detail">
-                                    <div class="title">
-                                        <h3>Design</h3>
-                                    </div>
-                                    <div class="subtitle">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque corrupti
-                                            molestias voluptatum.</p>
-                                    </div>
-                                    <a class="box-botton" href="#">Learn More <i
-                                            class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -222,8 +173,21 @@
                                     <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
                                         alt="">
                                     <h3 class="title">{{ $value->name }}</h3>
-                                    <p class="description">{{ Str::limit($value->description, 250) }}</p>
-                                    <div class="hrline mb-4"></div>
+
+
+                                    <p>
+                                        {{ (Str::limit($value->description, 100, '')) }}
+                                        @if (strlen($value->description) > 100)
+                                            <span id="dots{{ $value->id }}">...</span>
+                                            <span id="more{{ $value->id }}" style="display: none;">{{ substr($value->description, 100) }}</span>
+                                            <span id="toggle{{ $value->id }}" style="display: none;">{{ substr($value->description, 100) }}</span>
+                                            <button onclick="toggleReadMore({{ $value->id }})" id="myBtn{{ $value->id }}" style="color: #D8511D; border:none;">Read more</button>
+                                        @endif
+                                    </p>
+                                    <button onclick="toggleReadLess({{ $value->id }})" id="myBtn-less{{ $value->id }}" style="display: none; color: #D8511D; border:none;">Read less</button>
+
+                                    {{-- <p class="description">{{ Str::limit($value->description, 250) }}</p> --}}
+                                    <div class="hrline mb-4 mt-4"></div>
                                 </div>
                             </div>
                         @endforeach
@@ -296,7 +260,7 @@
                 <div class="row messagefd-row">
                     <div class="col-md-4">
                         <div class="mfd-image">
-                            <img src="assets/images/mfd-2.png" alt="" class="mfd-img">
+                            <img src="assets/images/md.jpg" alt="" class="mfd-img">
                         </div>
                     </div>
 
@@ -306,26 +270,18 @@
                                 <h3>Message from the Director</h3>
                             </div>
                             <div class="detail mt-3">
-                                <p>Lorem ipsum dolor sit amet consectetur. Accumsan tristique nibh scelerisque sit odio
-                                    eu eget. Sed id pulvinar suspendisse faucibus diam sapien volutpat turpis id.
-                                    Egestas duis nulla at ac. Felis placerat consectetur porttitor nec ac nam mi odio.
-                                    Neque tristique consectetur posuere fames urna ultrices cursus. Purus dignissim
-                                    quisque ut vitae arcu. Arcu sollicitudin odio euismod sit. Odio purus at eu
-                                    imperdiet. Feugiat scelerisque vestibulum orci mauris faucibus donec malesuada cras.
-                                    Augue nunc nullam magna varius sed lectus mattis. Lacus magna urna lobortis aliquet
-                                    quis vel quis nibh. Ipsum id adipiscing faucibus viverra leo ultricies augue. Nullam
-                                    consequat pulvinar facilisis pharetra facilisis dui. Lacus et at tortor sed.
-                                    Porttitor urna amet quis elementum nibh aliquet ornare. Risus gravida ut quis a
-                                    commodo at vel. Gravida erat porttitor tellus id diam. Massa diam facilisis ornare
-                                    non eu volutpat nam augue. Quisque enim enim aliquam placerat tellus id ullamcorper
-                                    venenatis eget. In pharetra nunc nibh ligula non nibh. At duis arcu nisl varius
-                                    euismod diam. Augue felis sagittis gravida imperdiet. Varius maecenas ac sapien sit
-                                    morbi a ut pharetra. Sit id eu est cursus etiam sed etiam. Leo amet sapien vitae.
-                                </p>
+                               <p>
+                                Director of Six Sigma Inc extends warm greetings and gratitude for trust and support. Committed to excellence, providing innovative IT solutions for business success. Pushing boundaries with cutting-edge tech and dedicated team. Focused on exceeding expectations and adapting services to unique objectives.
+                               </p>
+                               <p>
+                                I am proud of the achievements we have accomplished together and excited about the opportunities that lie ahead. With your support, we will continue to innovate, adapt, and deliver value-driven solutions that empower your businesses to thrive.
+                                Thank you once again for your trust and partnership. We look forward to continuing this journey of growth and success together.
+                               </p>
                             </div>
                             <div class="full-name">
-                                <h5>Full Name</h5>
-                                <h6>CEO, ABC Company</h6>
+                                <h5>Ram Krishna Dahal</h5>
+                                <h6>Managing Director</h6>
+                                <h6>Six Sigma Inc. Pvt. Ltd</h6>
                             </div>
                         </div>
                     </div>
@@ -407,7 +363,8 @@
 
 
 
-        <div class="contact-section">
+        {{-- Contact -Section --}}
+        <div class="contact-section" id="contactform">
             <div class="container">
                 <div class="row main-row">
                     <div class="col-md-7">
@@ -419,14 +376,11 @@
                                 <p>Feel free to contact us anytime.<br>We will get back to you as soon as we can.</p>
                             </div>
                             <div class="row contact-form mt-3">
-                                @if (session('message'))
-                                    <p>{{ session('message') }}</p>
-                                @endif
-                                <form action="{{ route('contactUs.send') }}" method="POST">
+                                <form action="{{ route('contactUs.send') }}" method="POST"  id="myForm">
                                     @csrf
                                     <div class="row fullname">
                                         <label for="">Full Name</label>
-                                        <input type="text" name="name" value="{{old('name')}}" required>
+                                        <input type="text" name="name" value="{{ old('name') }}" required>
                                         @if ($errors->has('name'))
                                             <span class="text-xs text-danger">{{ $errors->first('name') }}</span>
                                         @endif
@@ -434,7 +388,7 @@
 
                                     <div class="row email">
                                         <label for="">Email Address</label>
-                                        <input type="text" name="email" value="{{old('email')}}" required>
+                                        <input type="text" name="email" value="{{ old('email') }}" required>
                                         @if ($errors->has('email'))
                                             <span class="text-xs text-danger">{{ $errors->first('email') }}</span>
                                         @endif
@@ -442,14 +396,14 @@
 
                                     <div class="row message">
                                         <label for="">Message</label>
-                                        <textarea id="" cols="30" rows="10" name="message">{{old('message')}}</textarea>
+                                        <textarea id="" cols="30" rows="10" name="message">{{ old('message') }}</textarea>
                                         @if ($errors->has('message'))
                                             <span class="text-xs text-danger">{{ $errors->first('message') }}</span>
                                         @endif
                                     </div>
 
                                     <div class="submit-btn mt-3">
-                                        <button type="submit">Submit</button>
+                                        <button type="submit" value="submit">Submit</button>
                                     </div>
                                 </form>
                             </div>
@@ -466,7 +420,7 @@
                                     <div class="row">
                                         <div class="col-1 ms-2 icon"><i class="fa-solid fa-location-dot"></i></div>
                                         <div class="col-9 mt-2 detail">
-                                            <p>Kamladi, Kathmandu, Nepal <br> Office hours: 9:30 AM - 5:00 PM (Sun -
+                                            <p>Kamladi, Kathmandu, Nepal <br> Office hours: 9:00 AM - 5:00 PM (Sun -
                                                 Fri)
                                             </p>
                                         </div>
@@ -476,7 +430,7 @@
                                     <div class="row">
                                         <div class="col-1 ms-2 icon"><i class="fa-solid fa-phone"></i></div>
                                         <div class="col-9 mt-2 detail">
-                                            <p>+977 9813917313</p>
+                                            <a href="tel:+977 9813917313" class="col-md-10" style="text-decoration: none; color:white;">+977 9813917313</a>
                                         </div>
                                     </div>
                                 </div>
@@ -484,16 +438,16 @@
                                     <div class="row">
                                         <div class="col-1 ms-2 icon"><i class="fa-solid fa-envelope"></i></div>
                                         <div class="col-9 mt-2 detail">
-                                            <p>info@sixsigmainc.com.np</p>
+                                            <a href="mailto:info@sixsigmainc.com.np" class="col-md-10 mb-2" style="text-decoration: none; color:white;">info@sixsigmainc.com.np</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mb-3 justify-content-center align-items-start">
-                                    <div class="col-1 ms-1 icon"><a href="#" class="text-white"><i
-                                                class="fa-brands fa-twitter"></i></a></div>
-                                    <div class="col-1 ms-1 icon"><a href="#" class="text-white"><i
+                                    <div class="col-1 ms-1 icon"><a href="https://www.youtube.com/@GadgetFrame/" target="_blank" class="text-white"><i
+                                                class="fa-brands fa-youtube"></i></a></div>
+                                    <div class="col-1 ms-1 icon"><a href="https://www.instagram.com/sixsigmainc/" target="_blank" class="text-white"><i
                                                 class="fa-brands fa-instagram"></i></a></div>
-                                    <div class="col-1 ms-1 icon"><a href="#" class="text-white"><i
+                                    <div class="col-1 ms-1 icon"><a href="https://www.facebook.com/sixsigmaincofficial/" target="_blank" class="text-white"><i
                                                 class="fa-brands fa-facebook-f"></i></a></div>
                                 </div>
                             </div>
@@ -517,8 +471,8 @@
 
                     <div class="row jo-row mt-5">
                         @foreach ($jobopening as $value)
-                            <div class="col-md-4 box">
-                                <div class="row jo-detail">
+                            <div class="col-md-4 box mb-4 mb-md-0">
+                                <div class="row jo-detail me-1 p-4 text-start rounded-3 h-100 " style="background-color: rgba(15, 60, 84, 0.07);">
                                     <div class="jo-title text-left">
                                         <h3>{!! $value->position_name !!}</h3>
                                     </div>
@@ -526,10 +480,10 @@
                                         <h6>{{ date('jS F, Y', strtotime($value->created_at)) }}</h6>
                                     </div>
                                     <div class="jo-vacency">
-                                        <h4>{{ $value->vacancy_no }}</h4>
+                                        <h4>No. of Vacancy:{{ $value->vacancy_no }}</h4>
                                     </div>
                                     <div class="button">
-                                        <a href="#" class="btn btn-outline-danger">View Details</a>
+                                        <a href="{{route('career')}}#openings" class="btn btn-outline-danger">View Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -545,4 +499,43 @@
     </div>
 
     <!--Main Section End-->
+@endsection
+
+
+@section('script')
+<script>
+
+function toggleReadMore(id) {
+        var dots = document.getElementById("dots" + id);
+        var moreText = document.getElementById("more" + id);
+        var toggleText = document.getElementById("toggle" + id);
+        var btnText = document.getElementById("myBtn" + id);
+        var btnLess = document.getElementById("myBtn" + id + "-less");
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            toggleText.style.display = "none";
+            btnLess.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+            toggleText.style.display = "inline";
+            btnLess.style.display = "inline";
+        }
+    }
+
+    function toggleReadLess(id) {
+        var dots = document.getElementById("dots" + id);
+        var moreText = document.getElementById("more" + id);
+        var toggleText = document.getElementById("toggle" + id);
+        var btnText = document.getElementById("myBtn" + id);
+        var btnLess = document.getElementById("myBtn" + id + "-less");
+
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        toggleText.style.display = "none";
+        btnLess.style.display = "none";
+    }
+</script>
 @endsection

@@ -35,7 +35,7 @@
             <p
               class="text-lg font-semibold text-gray-700 dark:text-gray-200"
             >
-              6389
+            {{$ourclientCount}}
             </p>
           </div>
         </div>
@@ -58,12 +58,12 @@
             <p
               class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
             >
-              Account balance
+              Testimonials
             </p>
             <p
               class="text-lg font-semibold text-gray-700 dark:text-gray-200"
             >
-              $ 46,760.89
+              {{$testimonialsCount}}
             </p>
           </div>
         </div>
@@ -84,12 +84,12 @@
             <p
               class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
             >
-              New sales
+              Project Presenter
             </p>
             <p
               class="text-lg font-semibold text-gray-700 dark:text-gray-200"
             >
-              376
+              {{$presenterCount}}
             </p>
           </div>
         </div>
@@ -112,12 +112,12 @@
             <p
               class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
             >
-              Pending contacts
+              Total FAQ's
             </p>
             <p
               class="text-lg font-semibold text-gray-700 dark:text-gray-200"
             >
-              35
+              {{$faqsCount}}
             </p>
           </div>
         </div>

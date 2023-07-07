@@ -29,7 +29,7 @@ class MeetOurTeamService{
 
     public function store(Request $request){
         $validatedValue = $request->validate([
-            'image'=>'required|image|mimes:png,jpg,jpeg,svg,gif|max:2048',
+            'image'=>'required|image|mimes:png,jpg,jpeg,svg,gif',
             'name'=>'required|max:100',
             'position_name'=>'required|max:50',
             'description'=>'required'
@@ -48,7 +48,7 @@ class MeetOurTeamService{
         $validatedValue = $request->validate([
             'name'=>'required|max:100',
             'position_name'=>'required|max:50',
-            'image'=>'image|mimes:png,jpg,jpeg,svg,gif|max:2048',
+            'image'=>'image|mimes:png,jpg,jpeg,svg,gif',
             'description'=>'required'
 
         ]);

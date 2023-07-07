@@ -8,9 +8,7 @@
                 <div class="row w-100">
                     <div class="col-md-12" style="width: 600px;">
                         <h1 class="mb-3 text-white text-center">Contact Us</h1>
-                        <h6 class="mb-3 text-white fw-light text-center">Lorem ipsum dolor sit, amet
-                            consectetur adipisicing elit. Repudiandae
-                            eum, laborum dignissimos quaerat pariatur libero a porro repellat sit vero?</h6>
+                        <h6 class="mb-3 text-white fw-light text-center">Our committed team is prepared to help you with great service and cutting-edge solutions. Get in touch with us right away for a smooth and effective partnership.</h6>
                     </div>
                 </div>
             </div>
@@ -19,7 +17,7 @@
     <!-- Hero -->
 
 
-    <div class="contactus-main">
+    <div class="contactus-main" >
         <div class="container">
 
             <div class="contact-form-section">
@@ -34,8 +32,8 @@
                                 <div class="location">
                                     <div class="row align-items-center box">
                                         <div class="col-1 ms-3 icon"><i class="fa-solid fa-location-dot"></i></div>
-                                        <div class="col-9 mt-3 detail">
-                                            <p>Kamladi, Kathmandu, Nepal <br> Office hours: 9:30 AM - 5:00 PM (Sun -
+                                        <div class="col-9 mt-3 detail" >
+                                            <p>Kamladi, Kathmandu, Nepal <br> Office hours: 9:00 AM - 5:00 PM (Sun -
                                                 Fri)
                                             </p>
                                         </div>
@@ -45,7 +43,7 @@
                                     <div class="row align-items-center p-2 box">
                                         <div class="col-1 ms-2 icon"><i class="fa-solid fa-phone"></i></div>
                                         <div class="col-9 mt-3 detail">
-                                            <p>+977 9813917313</p>
+                                            <p><a href="tel:+977 9813917313" class="col-md-10" style="text-decoration: none; color:#0F3C54;">+977 9813917313</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +51,7 @@
                                     <div class="row align-items-center p-2 box">
                                         <div class="col-1 ms-2 icon"><i class="fa-solid fa-envelope"></i></div>
                                         <div class="col-9 mt-3 detail">
-                                            <p>info@sixsigmainc.com.np</p>
+                                            <p><a href="mailto:info@sixsigmainc.com.np" class="col-md-10 mb-2" style="text-decoration: none; color:#0F3C54;">info@sixsigmainc.com.np</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -61,28 +59,23 @@
                         </div>
                     </div>
 
-                    {{-- Admin Panel - Contact Us (Backend) --}}
 
-                    <div class="col-md-6 contact-form" id="myDiv">
-                        @if (session('success_message'))
-                            <div class="alert alert-success">
-                                {{ session('success_message') }}
-                            </div>
-                        @endif
-                        <form action="{{ route('contactUs.store') }}" method="POST">
+                    {{-- Admin Panel - Contact Us (Backend) --}}
+                    <div class="col-md-6 contact-form" id="validateform">
+                        <form action="{{ route('contactUs.store') }}" method="POST" id="contactform">
                             @csrf
                             <div class="message-row">
                                 <div class="row">
                                     <div class="mt-2 col-lg-6 full-name box">
                                         <label for="">Full Name</label>
-                                        <input type="text" name="name" value="{{ old('name') }}">
+                                        <input type="text" name="name" value="{{ old('name') }}" required>
                                         @if ($errors->has('name'))
                                             <span class="text-xs text-danger">{{ $errors->first('name') }}</span>
                                         @endif
                                     </div>
                                     <div class="mt-2 col-lg-6 phone-number box">
                                         <label for="">Phone Number</label>
-                                        <input type="text" name="phone" value="{{ old('phone') }}">
+                                        <input type="text" name="phone" value="{{ old('phone') }}" required>
                                         @if ($errors->has('phone'))
                                             <span class="text-xs text-danger">{{ $errors->first('phone') }}</span>
                                         @endif
@@ -91,7 +84,7 @@
                                 <div class="row">
                                     <div class="mt-2 col-lg-6 email box">
                                         <label for="">Email</label>
-                                        <input type="text" name="email" value="{{ old('email') }}">
+                                        <input type="text" name="email" value="{{ old('email') }}" required>
                                         @if ($errors->has('email'))
                                             <span class="text-xs text-danger">{{ $errors->first('email') }}</span>
                                         @endif
@@ -113,9 +106,9 @@
                                     </div>
                                 </div>
 
-                                <div class="message">
+                                <div class="message" >
                                     <label for="">Message</label>
-                                    <textarea name="message" id="" cols="10" rows="10">{{ old('message') }}</textarea>
+                                    <textarea name="message" id="" cols="10" rows="10" required>{{ old('message') }}</textarea>
                                     @if ($errors->has('message'))
                                         <span class="text-xs text-danger">{{ $errors->first('message') }}</span>
                                     @endif
@@ -161,8 +154,9 @@
             </div>
 
 
-            <div class="consultation-section">
-                <div class="consult-row">
+            {{-- Consultation - Section --}}
+            <div class="consultation-section" id="consultationform">
+                <div class="consult-row" id="validateconsultationform">
                     <div class="heading">
                         <h1>Need a Consultation?</h1>
                     </div>
@@ -177,37 +171,37 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <input class="form-control" type="text" placeholder="Full Name"
-                                            name="name">
-                                        @if ($errors->has('name'))
-                                            <span class="text-sm text-danger">{{ $errors->first('name') }}</span>
+                                            name="c_name" required value="{{old('c_name')}}">
+                                        @if ($errors->has('c_name'))
+                                            <span class="text-sm text-danger">{{ $errors->first('c_name') }}</span>
                                         @endif
                                     </div>
                                     <div class="col-md-3">
                                         <input class="form-control" type="text" placeholder="Company Name"
-                                            name="company_name">
+                                            name="company_name" value="{{old('company_name')}}" required>
                                         @if ($errors->has('company_name'))
                                             <span class="text-sm text-danger">{{ $errors->first('company_name') }}</span>
                                         @endif
                                     </div>
                                     <div class="col-md-3">
                                         <input class="form-control" type="text" placeholder="Work Email"
-                                            name="email">
-                                        @if ($errors->has('email'))
-                                            <span class="text-sm text-danger">{{ $errors->first('email') }}</span>
+                                            name="c_email" value="{{old('c_email')}}" required>
+                                        @if ($errors->has('c_email'))
+                                            <span class="text-sm text-danger">{{ $errors->first('c_email') }}</span>
                                         @endif
                                     </div>
                                     <div class="col-md-3">
                                         <input class="form-control" type="text" placeholder="Contact No."
-                                            name="contact">
-                                        @if ($errors->has('contact'))
-                                            <span class="text-sm text-danger">{{ $errors->first('contact') }}</span>
+                                            name="c_contact" value="{{old('c_contact')}}" required>
+                                        @if ($errors->has('c_contact'))
+                                            <span class="text-sm text-danger">{{ $errors->first('c_contact') }}</span>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="help-message mt-3">
-                                    <textarea name="message" id="" cols="30" rows="10" placeholder="How can we help you?"></textarea>
-                                    @if ($errors->has('message'))
-                                        <span class="text-sm text-danger">{{ $errors->first('message') }}</span>
+                                    <textarea name="c_message" id="" cols="30" rows="10" placeholder="How can we help you?" required>{{old('c_message')}}</textarea>
+                                    @if ($errors->has('c_message'))
+                                        <span class="text-sm text-danger">{{ $errors->first('c_message') }}</span>
                                     @endif
                                 </div>
 
@@ -222,11 +216,11 @@
                                     <h5>Our Social Medias</h5>
                                 </div>
                                 <div class="row social-media">
-                                    <div class="col-md-1 ms-3 icon"><a href="#" class="text-white"><i
-                                                class="fa-brands fa-twitter"></i></a></div>
-                                    <div class="col-md-1 ms-3 icon"><a href="#" class="text-white"><i
+                                    <div class="col-md-1 ms-3 icon"><a href="https://www.youtube.com/@GadgetFrame" target="_blank" class="text-white"><i
+                                                class="fa-brands fa-youtube"></i></a></div>
+                                    <div class="col-md-1 ms-3 icon"><a href="https://www.instagram.com/sixsigmainc/" target="_blank" class="text-white"><i
                                                 class="fa-brands fa-instagram"></i></a></div>
-                                    <div class="col-md-1 ms-3 icon"><a href="#" class="text-white"><i
+                                    <div class="col-md-1 ms-3 icon"><a href="https://www.facebook.com/sixsigmaincofficial/" target="_blank" class="text-white"><i
                                                 class="fa-brands fa-facebook-f"></i></a></div>
                                 </div>
 
@@ -246,23 +240,3 @@
     </div>
 @endsection
 
-@section('script')
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            var hash = window.location.hash;
-            if (hash) {
-                var element = document.querySelector(hash);
-                if (element) {
-                    element.scrollIntoView();
-                }
-            }
-        });
-
-        function scrollToDiv() {
-            var div = document.getElementById("myDiv");
-            div.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    </script>
-@endsection

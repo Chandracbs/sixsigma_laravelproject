@@ -9,9 +9,7 @@
                 <div class="row w-100">
                     <div class="col-md-12 mt-5" style="width: 450px;">
                         <h1 class="mb-3 text-white mt-5">Get To Know Us</h1>
-                        <h6 class="mb-3 text-white fw-light" style="text-align: justify;">Lorem ipsum dolor sit, amet
-                            consectetur adipisicing elit. Repudiandae
-                            eum, laborum dignissimos quaerat pariatur libero a porro repellat sit vero?</h6>
+                        <h6 class="mb-3 text-white fw-light" style="text-align: justify;">Welcome to Six Sigma Inc, your premier IT solutions provider!</h6>
                     </div>
                     <div class="col-md-4 hero-subimage">
                         <img src="assets/images/about/top.png" alt="" class="hero-subimg">
@@ -37,23 +35,19 @@
                                     <h3>Who We Are</h3>
                                 </div>
                                 <div class="detail px-5 mb-5">
-                                    <h6>Six Sigma Inc. Pvt. Ltd. is an expert consulting and solution
-                                        provider
-                                        company established in the year 2016 focusing on the current technologies to
-                                        help
-                                        boost the productivity of communities, government, businesses, institutions and
-                                        corporate houses in Nepal. Six Sigma Inc. comprises of professional engineers,
-                                        consultants, academicians, trainers and businessmen. We at Six Sigma Inc. are
-                                        committed to providing the best in class services with higher concentration on
-                                        Computer Information, Communication & Broadcasting Technologies. Focused on
-                                        Computer
-                                        Information, Communication & Broadcasting Technologies, we are committed to
-                                        providing best-in-class solutions. By staying up-to-date with the latest
-                                        technological advancements, we ensure our clients receive innovative and
-                                        customized
-                                        strategies. Through strategic planning and practical guidance, we help
-                                        organizations
-                                        optimize their operations and achieve their goals.</h6>
+                                    <h6>Welcome to Six Sigma Inc, your premier IT solutions provider!
+                                        We provide specialized services in web development, UI/UX, digital marketing, and other areas. Our talented staff goes above and beyond to make your ideas a reality. Our core values include quality, best practices, and rigorous testing. We welcome innovation as your devoted ally to keep you on top. Whether you are a startup or an established company, we realize your ambitions. Together, let's set out on a path to success and growth.</h6>
+                                        <p>
+                                            We provide web development, UI/UX, digital marketing, and other services. Our talented staff exceeds expectations by bringing your ideas to life.  We provide high-quality solutions while following industry standards. We welcome new technology as your ally to keep you creative. Whether you are a startup or an established company, we realize your ambitions. Come along with us on a journey to achievement and growth.
+
+                                        </p>
+                                        {{-- <p>
+                                            We prioritize client satisfaction, delivering tailored solutions that drive success. With attention to detail and commitment to excellence, we meet the highest standards. By embracing cutting-edge tech, we optimize your online presence. Trust us as your reliable partner for achieving business goals and creating growth.
+                                        </p> --}}
+                                        <p>
+                                            Welcome aboard!
+                                            The Six Sigma Inc Team
+                                        </p>
                                 </div>
                             </div>
                         </div>
@@ -81,18 +75,11 @@
                                     <h3>OUR VISION</h3>
                                 </div>
                                 <div class="subtitle px-5">
-                                    <h1>Talented people, working together</h1>
+                                    <h1>Empowering success through innovative solutions.</h1>
                                 </div>
                                 <div class="detail px-5 mb-5">
-                                    <h6>Our mission is to enable people anywhere to solve big problems. Our customers
-                                        choose us because we help innovate and adapt faster with world-class engineers
-                                        and product engineering practices. We are fanatics of how to design, build, and
-                                        validate new ideas in better ways. We combine those learnings with an unwavering
-                                        dedication to customer success to foster long-lasting impact for businesses and
-                                        the people they serve. Through strategic planning and practical guidance, we
-                                        help organizations optimize their operations and achieve their goals. At Six
-                                        Sigma Inc., we foster strong partnerships with our clients. At Six Sigma Inc.,
-                                        we foster strong partnerships with our clients.</h6>
+                                    <h6>Our vision at Six Sigma Inc. is to be a driving force in transforming the way organisations approach problem-solving and innovation. We envision a world where businesses can thrive by harnessing the power of technology and strategic planning. By providing practical guidance and leveraging our expertise, we help organizations optimize their operations, achieve their goals, and stay ahead in a rapidly changing digital landscape. We aspire to foster strong partnerships with our clients, becoming their trusted advisors and collaborators in achieving success. Through our visionary approach and commitment to excellence, we aim to make a significant and lasting impact in the IT industry and beyond.
+                                    </h6>
                                 </div>
                             </div>
                         </div>
@@ -126,18 +113,11 @@
                                     <h3>OUR MISSION</h3>
                                 </div>
                                 <div class="subtitle px-5">
-                                    <h1>Talented people, working together</h1>
+                                    <h1>Transforming possibilities into reality.</h1>
                                 </div>
                                 <div class="detail px-5 mb-5">
-                                    <h6>Our mission is to enable people anywhere to solve big problems. Our customers
-                                        choose us because we help innovate and adapt faster with world-class engineers
-                                        and product engineering practices. We are fanatics of how to design, build, and
-                                        validate new ideas in better ways. We combine those learnings with an unwavering
-                                        dedication to customer success to foster long-lasting impact for businesses and
-                                        the people they serve. Through strategic planning and practical guidance, we
-                                        help organizations optimize their operations and achieve their goals. At Six
-                                        Sigma Inc., we foster strong partnerships with our clients.At Six Sigma Inc., we
-                                        foster strong partnerships with our clients.</h6>
+                                    <h6>At Six Sigma Inc., our mission is to enable people anywhere to solve big problems. We strive to empower individuals and businesses with the tools and solutions they need to tackle complex challenges. By leveraging the expertise of our world-class engineers and embracing cutting-edge product engineering practices, we help our customers innovate and adapt faster. We are passionate about designing, building, and validating new ideas in better ways, constantly seeking ways to improve and deliver exceptional results. With an unwavering dedication to customer success, we aim to create a long-lasting impact for businesses and the people they serve.
+                                    </h6>
                                 </div>
                             </div>
                         </div>

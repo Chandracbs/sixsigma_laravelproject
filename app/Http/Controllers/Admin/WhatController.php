@@ -31,17 +31,17 @@ class WhatController extends Controller
 
     public function store(Request $request){
         $this->whatService->store($request);
-        return redirect()->route('whatwedo.index');
+        return redirect()->route('whatwedo.index')->with('message','Data added Successfully');
     }
 
     public function update(Request $request,string $id){
         $this->whatService->update($request,$id);
-        return redirect()->route('whatwedo.index');
+        return redirect()->route('whatwedo.index')->with('message','Data updated Successfully');
     }
 
 
     public function destroy(string $id){
         $this->whatService->destroy($id);
-        return redirect()->route('whatwedo.index');
+        return redirect()->route('whatwedo.index')->with('message','Data deleted Successfully');
     }
 }

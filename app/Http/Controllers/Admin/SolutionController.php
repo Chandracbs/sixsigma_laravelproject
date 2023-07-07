@@ -36,17 +36,17 @@ class SolutionController extends Controller
 
     public function store(Request $request){
         $this->solutionService->store($request);
-        return redirect()->route('solution.index');
+        return redirect()->route('solution.index')->with('message','Solution added Successfully');
     }
 
     public function update(Request $request,string $id){
         $this->solutionService->update($request,$id);
-        return redirect()->route('solution.index');
+        return redirect()->route('solution.index')->with('message','Solution updated Successfully');
     }
 
     public function destroy(string $id){
         $this->solutionService->destroy($id);
-        return redirect()->route('solution.index');
+        return redirect()->route('solution.index')->with('message','Solution deleted Successfully');
     }
 }
 ?>

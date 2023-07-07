@@ -68,6 +68,7 @@
                     </div>
                 </th>
                 <th class="px-4 py-3">Position Name</th>
+                <th class="px-4 py-3">Image</th>
                 <th class="px-4 py-3">
                     <div class="flex items-center">
                         <span class="mr-2">Created At</span>
@@ -89,7 +90,6 @@
                     </div>
                 </th>
                 <th class="px-4 py-3">Vacancy No.</th>
-                <th class="px-4 py-3">Description</th>
                 <th class="px-4 py-3">Action</th>
               </tr>
             </thead>
@@ -103,6 +103,27 @@
                     {{$value->id}}
                 </td>
 
+
+                <td class="px-4 py-3 text-sm">
+                    {{-- removed hidden from class --}}
+                    <div
+                       class="relative  w-8 h-8 mr-3 rounded-full md:block"
+                     >
+                     @if (!empty($value->image))
+                       <img
+                         class="object-cover w-full h-full rounded-full"
+                         src = "/{{$value->image->image_location}}/{{$value->image->image_name}}"
+                         alt="image.jpg"
+                         loading="lazy"
+                       />
+                       @endif
+                       <div
+                         class="absolute inset-0 rounded-full shadow-inner"
+                         aria-hidden="true"
+                       ></div>
+                </td>
+
+
                 <td class="px-4 py-3 text-sm">
                     {!!$value->position_name!!}
                 </td>
@@ -113,10 +134,6 @@
 
                 <td class="px-4 py-3 text-sm">
                     {{$value->vacancy_no}}
-                </td>
-
-                <td class="px-4 py-3 text-sm">
-                    {!!Str::limit($value->description,30)!!}
                 </td>
                 {{-- Buttons --}}
                 <td class="px-4 py-3">
@@ -164,7 +181,7 @@
               </tr>
               @endforeach
               @else
-              <td style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align:center;" colspan="6">Data Not Found.</td>
+              <td style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align:center;" colspan="7">Data Not Found.</td>
               @endif
 
             </tbody>

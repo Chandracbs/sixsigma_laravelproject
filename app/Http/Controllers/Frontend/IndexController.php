@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 use App\Mail\ConsultationMail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\ContactUsController;
 
 class IndexController extends Controller
@@ -40,7 +41,7 @@ class IndexController extends Controller
     }
     public function career(){
         $title = "Six Sigma Inc - Careers";
-        $jobopening = JobOpening::all();
+        $jobopening = JobOpening::orderBy('created_at','desc')->get();
         return view('frontend.career',compact('jobopening','title'));
     }
     public function services(){
@@ -56,7 +57,7 @@ class IndexController extends Controller
         return view('frontend.contact',compact('title'));
     }
     public function contact_store(Request $request){
-        $validatedValue = $request->validate([
+        $validator = Validator::make($request->all(),[
             'name'=>'required|max:100',
             'phone'=>'required|max:15|min:7|regex:/^([0-9\s\-\+\(\)]*)$/',
             'email'=>'required|email|unique:contact_us,email|max:255',
@@ -67,8 +68,13 @@ class IndexController extends Controller
             'interest.required'=>'Please select your interest'
         ]);
 
-        ContactUs::create($validatedValue);
-        return redirect()->route('contact')->with('message','You have successfully sent a message.');
+        if($validator->fails()){
+            return back()->withFragment('#validateform')->withErrors($validator)->withInput();
+        }
+        else{
+        ContactUs::create($request->all());
+        return back()->withFragment('#contactform')->with('message','Your message has been sent successfully.');
+        }
     }
 
     public function webdev(){
@@ -89,20 +95,34 @@ class IndexController extends Controller
         ]);
 
         Mail::to('chandra20163@gmail.com')->send(new ContactUsMail($validatedValue));
-        return back()->with('message','Your Contact has been sent successfully.');
+
+        return back()->withFragment('#contactform')->with('message','Your message has been sent successfully.');
 
     }
 
     public function consultation(Request $request){
-        $validatedValue = $request->validate([
-            'name'=>'required|max:150',
+
+        $validator = Validator::make($request->all(),[
+            'c_name'=>'required|max:150',
             'company_name'=>'required|max:150',
-            'email'=>'required|max:255|email',
-            'contact'=>'required|numeric',
-            'message'=>'required'
+            'c_email'=>'required|max:255|email',
+            'c_contact'=>'required|max:15|min:7|regex:/^([0-9\s\-\+\(\)]*)$/',
+            'c_message'=>'required'
+        ],[
+            'c_email.email'=>'The email field must be a valid email address.',
+            'c_contact.numeric'=>'The contact field must be a number',
+            'c_contact.max'=>'The contact field should be under 15 digits',
+            'c_contact.min'=>'The contact field should be above 7 digits',
+            'c_contact.regex'=>'The contact field must contain correction'
+
         ]);
-        Mail::to('chandra20163@gmail.com')->send(new ConsultationMail($validatedValue));
-        return back()->with('message','Your Consultation has been sent successfully.');
+        if($validator->fails()){
+            return back()->withFragment('#validateconsultationform')->withErrors($validator)->withInput();
+        }
+        else{
+            Mail::to('chandra20163@gmail.com')->send(new ConsultationMail($request->all()));
+            return back()->withFragment('#consultationform')->with('message','Your message has been sent successfully.');
+        }
     }
 
     public function location(){
