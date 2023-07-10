@@ -129,7 +129,7 @@
                 </td>
 
                 <td class="px-4 py-3 text-sm">
-                    {{$value->message}}
+                    {{Str::limit($value->message,20)}}
                 </td>
 
                 <td class="px-4 py-3 text-sm">

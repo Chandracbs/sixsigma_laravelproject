@@ -15,6 +15,7 @@ use App\Models\MeetOurTeam;
 use App\Models\Testimonial;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Mail\HaveProjectMail;
 use App\Mail\ConsultationMail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
@@ -71,11 +72,14 @@ class IndexController extends Controller
         if($validator->fails()){
             return back()->withFragment('#validateform')->withErrors($validator)->withInput();
         }
-        else{
+
         ContactUs::create($request->all());
+        $haveProjectMail = new HaveProjectMail($request->all());
+        $haveProjectMail->from($request->email, $request->name);
+        Mail::to('info@sixsigmainc.com.np')->send($haveProjectMail);
         return back()->withFragment('#contactform')->with('message','Your message has been sent successfully.');
-        }
     }
+
 
     public function webdev(){
         $title = "Six Sigma Inc - Web Development";
@@ -110,7 +114,7 @@ class IndexController extends Controller
             'c_name'=>'required|max:150',
             'company_name'=>'required|max:150',
             'c_email'=>'required|max:255|email',
-            'c_contact'=>'required|max:15|min:10|regex:/^([0-9\s\-\+\(\)]*)$/',
+            'c_contact'=>'required|max:15|min:7|regex:/^([0-9\s\-\+\(\)]*)$/',
             'c_message'=>'required'
         ],[
             'c_email.email'=>'The email field must be a valid email address.',
@@ -123,7 +127,6 @@ class IndexController extends Controller
         if($validator->fails()){
             return back()->withFragment('#validateconsultationform')->withErrors($validator)->withInput();
         }
-        else{
 
             $consultantMail = new ConsultationMail($request->all());
 
@@ -132,7 +135,6 @@ class IndexController extends Controller
             Mail::to('info@sixsigmainc.com.np')->send($consultantMail);
 
             return back()->withFragment('#consultationform')->with('message','Your message has been sent successfully.');
-        }
     }
 
     public function location(){
