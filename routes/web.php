@@ -26,6 +26,7 @@ use App\Models\FAQ;
 use App\Models\MeetOurTeam;
 use App\Models\Testimonial;
 use App\Models\ContactUs;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
