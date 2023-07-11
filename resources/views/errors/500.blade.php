@@ -1,4 +1,4 @@
-@extends('frontend.master',['title' => 'SixSigma 404'])
+@extends('frontend.master',['title' => 'SixSigma 500'])
 
 @section('content')
 
