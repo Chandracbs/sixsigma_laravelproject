@@ -33,20 +33,22 @@ class JobOpeningService{
     public function store(Request $request){
         $validatedValue = $request->validate([
             'position_name'=>'required|max:50',
-            'vacancy_no'=>'required|numeric|max:1000'
+            'vacancy_no'=>'required|numeric|max:1000',
+            'image'=>'required|image|mimes:png,jpg,jpeg,svg,gif|max:2048'
         ]);
         $model = JobOpening::create($validatedValue);
-        $this->imageService->store($model, $request->image, 'images/jobopenings',true,500,500);
+        $this->imageService->store($model, $request->image, 'images/jobopenings',true,360,353);
     }
 
     public function update(Request $request, string $id){
         $validatedValue = $request->validate([
             'position_name'=>'required|max:50',
             'vacancy_no'=>'required|numeric|max:1000',
+            'image'=>'image|mimes:png,jpg,jpeg,svg,gif|max:2048'
         ]);
         $model = JobOpening::findOrFail($id);
         $model->update($validatedValue);
-        $this->imageService->update($model,$request->image,'images/jobopenings',true,500,500);
+        $this->imageService->update($model,$request->image,'images/jobopenings',true,360,353);
     }
 
 

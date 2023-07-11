@@ -154,8 +154,4 @@ class IndexController extends Controller
         return view('frontend.policies',compact('title'));
     }
 
-    public function try(){
-        $title = "Six Sigma Inc - Try";
-        return view('frontend.try',compact('title'));
-    }
 }

@@ -13,21 +13,22 @@
       defer
     ></script>
     <script src="{{url('/admin_assets/js/init-alpine.js')}}"></script>
-    <link
+    {{-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
     />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
       defer
-    ></script>
-    <script src="{{url('/admin_assets/js/charts-lines.js')}}" defer></script>
-    <script src="{{url('/admin_assets/js/charts-pie.js')}}" defer></script>
+    ></script> --}}
+    {{-- <script src="{{url('/admin_assets/js/charts-lines.js')}}" defer></script> --}}
+    {{-- <script src="{{url('/admin_assets/js/charts-pie.js')}}" defer></script> --}}
     <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
 
     {{-- Toastr Setup --}}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
-     alpha/css/bootstrap.css" rel="stylesheet">
+    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
+     alpha/css/bootstrap.css" rel="stylesheet"> --}}
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -49,7 +50,6 @@
             <purple-notice \>
         </div>
     </div>
-    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
 
     @yield('scripts')
 

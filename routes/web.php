@@ -80,8 +80,6 @@ Route::post('/contact',[IndexController::class,'consultation'])->name('consultat
 // For Privacy Policy in footer
 Route::get('/policy',[IndexController::class,'privatePolicy'])->name('policies');
 
-Route::get('/try',[IndexController::class,'try'])->name('try');
-
 
 
 

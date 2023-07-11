@@ -10,7 +10,6 @@
                         <a href="{{route('services')}}" style="text-decoration: none"><h5>What We Do</h5></a>
                         <a href="{{route('contact')}}" style="text-decoration: none"><h5>Contact</h5></a>
                         <a href="{{route('policies')}}" style="text-decoration: none"><h5>Privacy Policy</h5></a>
-                        <a href="{{route('try')}}" style="text-decoration: none"><h5>Try</h5></a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-4 services">
