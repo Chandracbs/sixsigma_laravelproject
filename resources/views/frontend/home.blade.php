@@ -131,7 +131,7 @@
                             @foreach ($solution as $value)
                                 <div class="box col-md-6">
                                     <div class="box-image">
-                                        <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
+                                        <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}"
                                             class="icon" alt="Image">
                                     </div>
                                     <div class="box-detail">
@@ -170,7 +170,7 @@
                         @foreach ($whatwedo as $value)
                             <div class="col-md-3 wtd-contain">
                                 <div class="row">
-                                    <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
+                                    <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}"
                                         alt="Image">
                                     <h3 class="title">{{ $value->name }}</h3>
 
@@ -216,7 +216,7 @@
                             @foreach ($process as $value)
                                 <div class="row col-lg-2 col-sm-4">
                                     <div class="pwf-img mb-sm-3">
-                                        <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
+                                        <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}"
                                             alt="Image">
                                     </div>
                                     <h6>{{ $value->name }}</h6>
@@ -241,7 +241,7 @@
                         @foreach ($technology as $value)
                             <div class="tech-item">
                                 <div class="twe-image">
-                                    <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
+                                    <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}"
                                         alt="Image">
                                 </div>
                             </div>
@@ -351,7 +351,7 @@
                     @foreach ($ourclient as $value)
                         <div class="item">
                             @if (!empty($value->image))
-                                <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
+                                <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}"
                                     alt="image.jpg">
                             @endif
                         </div>

@@ -123,7 +123,7 @@
                      @if (!empty($value->image))
                        <img
                          class="object-cover w-full h-full rounded-full"
-                         src = "/{{$value->image->image_location}}/{{$value->image->image_name}}"
+                         src = "{{asset($value->image->image_location.'/'.$value->image->image_name)}}"
                          alt="image.jpg"
                          loading="lazy"
                        />

@@ -138,25 +138,7 @@
 
             <div class="faq-main mt-5">
                 <div class="faq-row row align-items-center justify-content-center">
-                    {{-- @foreach($faq as $value)
-                    <div class="accordion" id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                                    aria-controls="panelsStayOpen-collapseTwo">
-                                    {{$value->question}}
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                                aria-labelledby="panelsStayOpen-headingTwo">
-                                <div class="accordion-body">
-                                    <p>{!!$value->answer!!}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach --}}
+
                     @foreach($faq as $index => $value)
                         <div class="accordion" id="accordionPanelsStayOpenExample">
                             <div class="accordion-item">

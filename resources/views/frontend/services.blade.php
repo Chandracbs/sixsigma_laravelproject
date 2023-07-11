@@ -39,7 +39,7 @@
                             <div class="col-md-3 box">
                                 <div class="row text-center">
                                     <div class="wwd-image">
-                                        <img src="/{{$value->image->image_location}}/{{$value->image->image_name}}" alt="">
+                                        <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}" alt="">
                                     </div>
                                     <div class="title mt-4">
                                         <h3>{{$value->name}}</h3>
@@ -76,7 +76,7 @@
                             <div class="col-md-2 box">
                                 <div class="row text-center">
                                     <div class="owp-image">
-                                        <img src="/{{$value->image->image_location}}/{{$value->image->image_name}}" alt="image.jpg">
+                                        <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}" alt="image.jpg">
                                     </div>
                                     <div class="title mt-4">
                                         <h3>{{$value->name}}</h3>
@@ -101,7 +101,8 @@
                             @foreach ($technology as $value)
                             <div class="tech-item">
                                 <div class="twe-image">
-                                    <img src="/{{$value->image->image_location}}/{{$value->image->image_name}}" alt="try.jpg">
+                                    <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}
+                                    " alt="try.jpg">
                                 </div>
                             </div>
                             @endforeach
@@ -133,7 +134,7 @@
                                             <p>{{Str::limit($value->testimonials,150)}}</p>
                                         </div>
                                         <div class="client-image">
-                                            <img src="/{{$value->image->image_location}}/{{$value->image->image_name}}" alt="try.jpg">
+                                            <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}" alt="try.jpg">
                                         </div>
                                         <div class="client-name">
                                             <h3>{!!$value->name!!}</h3>

@@ -145,7 +145,7 @@
                         @foreach($ourclient as $value)
                         <div class="item py-3" style="border-left: 1px solid #9c9999;">
                             @if(!empty($value->image))
-                            <img src="/{{$value->image->image_location}}/{{$value->image->image_name}}" class="h-auto w-100" alt="Image">
+                            <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}" class="h-auto w-100" alt="Image">
                             @endif
                         </div>
                         @endforeach
@@ -165,7 +165,7 @@
                         <div class="row">
                             <div class="ot-image p-0">
                                 @if(!empty($value->image))
-                                <img src="{{$value->image->image_location}}/{{$value->image->image_name}}" alt="Image"
+                                <img src="{{asset($value->image->image_location.'/'.$value->image->image_name)}}" alt="Image"
                                     class="ot-img h-100 w-100">
                                     @endif
                             </div>
