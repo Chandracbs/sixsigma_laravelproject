@@ -75,7 +75,7 @@
                 <h5>© 2023-Six Sigma Inc. Pvt. Ltd.All Rights Reserved.</h5>
             </div>
             <div class="col-md-2 footer-logo">
-                <a href="{{route('home')}}" style="text-decoration: none"><img src="assets/images/sixsigmalogo.png" alt="" class="logo"></a>
+                <a href="{{route('home')}}" style="text-decoration: none"><img src="{{asset('assets/images/sixsigmalogo.png')}}" alt="Logo" class="logo"></a>
             </div>
 
         </div>

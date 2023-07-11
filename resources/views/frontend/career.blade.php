@@ -11,7 +11,7 @@
                         <h6 class="mb-3 text-white fw-light" style="text-align: justify;">Become a part of our vibrant team and start a fulfilling career with us. Discover intriguing chances, develop your talents, and have a significant effect in a supportive and creative workplace. </h6>
                     </div>
                     <div class="col-lg-6 hero-subimage order-lg-first">
-                        <img src="assets/images/Careers/Vector 4.png" alt="" class="hero-subimg img-fluid">
+                        <img src="{{asset('assets/images/Careers/Vector 4.png')}}" alt="Image" class="hero-subimg img-fluid">
                     </div>
                 </div>
             </div>
@@ -33,8 +33,8 @@
                             <div class="col-md-4 box">
                                 <div class="row">
                                     <div class="col-md-2 icon">
-                                        <img src="assets/images/Careers/why work with us/ph_trophy.png" class="w-100"
-                                            alt="">
+                                        <img src="{{asset('')}}" class="w-100"
+                                            alt="Image">
                                     </div>
                                     <div class="col-md-10 detail">
                                         <h5>Expertise that Drives Results</h5>
@@ -47,8 +47,8 @@
                             <div class="col-md-4 box">
                                 <div class="row">
                                     <div class="col-md-2 icon">
-                                        <img src="assets/images/Careers/why work with us/ph_trophy.png" class="w-100"
-                                            alt="">
+                                        <img src="{{asset('assets/images/Careers/why work with us/ph_trophy.png')}}" class="w-100"
+                                            alt="Image">
                                     </div>
                                     <div class="col-md-10 detail">
                                         <h5>Innovative Solutions for Complex Challenges</h5>
@@ -61,8 +61,8 @@
                             <div class="col-md-4 box">
                                 <div class="row">
                                     <div class="col-md-2 icon">
-                                        <img src="assets/images/Careers/why work with us/icon-park-outline_delivery.png"
-                                            class="w-100" alt="">
+                                        <img src="{{asset('assets/images/Careers/why work with us/icon-park-outline_delivery.png')}}"
+                                            class="w-100" alt="Image">
                                     </div>
                                     <div class="col-md-10 detail">
                                         <h5>Collaborative Approach for Client Success</h5>
@@ -75,8 +75,8 @@
                             <div class="col-md-4 box">
                                 <div class="row">
                                     <div class="col-md-2 icon">
-                                        <img src="assets/images/Careers/why work with us/icons8_idea.png" class="w-100"
-                                            alt="">
+                                        <img src="{{asset('assets/images/Careers/why work with us/icons8_idea.png')}}" class="w-100"
+                                            alt="Image">
                                     </div>
                                     <div class="col-md-10 detail">
                                         <h5>Commitment to Quality and Excellence</h5>
@@ -89,8 +89,8 @@
                             <div class="col-md-4 box">
                                 <div class="row">
                                     <div class="col-md-2 icon">
-                                        <img src="assets/images/Careers/why work with us/icons8_idea.png" class="w-100"
-                                            alt="">
+                                        <img src="{{asset('assets/images/Careers/why work with us/icons8_idea.png')}}" class="w-100"
+                                            alt="Image">
                                     </div>
                                     <div class="col-md-10 detail">
                                         <h5>Agile and Adaptive to Change</h5>
@@ -102,8 +102,8 @@
                             <div class="col-md-4 box">
                                 <div class="row">
                                     <div class="col-md-2 icon">
-                                        <img src="assets/images/Careers/why work with us/icon-park-outline_delivery.png"
-                                            class="w-100" alt="">
+                                        <img src="{{asset('assets/images/Careers/why work with us/icon-park-outline_delivery.png')}}"
+                                            class="w-100" alt="Image">
                                     </div>
                                     <div class="col-md-10 detail">
                                         <h5>Customer-Centric Focus</h5>
@@ -201,7 +201,7 @@
             <div class="ohp-detail">
                 <div class="submit-cv box">
                     <div class="icon">
-                        <img src="assets/images/Careers/hiring/pepicons-pencil_cv.png" alt="">
+                        <img src="{{asset('assets/images/Careers/hiring/pepicons-pencil_cv.png')}}" alt="Image">
                     </div>
                     <div class="title">
                         <h4>Submit Your CV</h4>
@@ -210,7 +210,7 @@
 
                 <div class="submit-cv box">
                     <div class="icon">
-                        <img src="assets/images/Careers/hiring/interview (1) 1.png" alt="">
+                        <img src="{{asset('assets/images/Careers/hiring/interview (1) 1.png')}}" alt="Image">
                     </div>
                     <div class="title">
                         <h4>Phone Interview</h4>
@@ -219,7 +219,7 @@
 
                 <div class="submit-cv box">
                     <div class="icon">
-                        <img src="assets/images/Careers/hiring/interview 1.png" alt="">
+                        <img src="{{asset('assets/images/Careers/hiring/interview 1.png')}}" alt="Image">
                     </div>
                     <div class="title">
                         <h4>Interview Schedule</h4>
@@ -228,7 +228,7 @@
 
                 <div class="submit-cv box">
                     <div class="icon">
-                        <img src="assets/images/Careers/hiring/check-list 1.png" alt="">
+                        <img src="{{asset('assets/images/Careers/hiring/check-list 1.png')}}" alt="Image">
                     </div>
                     <div class="title">
                         <h4>Selection Status</h4>

@@ -12,7 +12,7 @@
                         <h6 class="mb-3 text-white fw-light" style="text-align: justify;">Welcome to Six Sigma Inc, your premier IT solutions provider!</h6>
                     </div>
                     <div class="col-md-4 hero-subimage">
-                        <img src="assets/images/about/top.png" alt="" class="hero-subimg">
+                        <img src="{{asset('assets/images/about/top.png')}}" alt="Image" class="hero-subimg">
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                 <div class="row justify-content-center align-items-center">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-lg-5 wwr-img">
-                            <img class="w-100" src="assets/images/about/who-we-are/Rectangle 56.png" alt="">
+                            <img class="w-100" src="{{asset('assets/images/about/who-we-are/Rectangle 56.png')}}" alt="Image">
                         </div>
                         <div class="col-lg-7 wwr-detail">
                             <div class="row  h-100 mx-0">
@@ -54,13 +54,13 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-md-4 subimage">
-                            <img src="assets/images/about/who-we-are/Rectangle 57.png" class="w-100" alt="">
+                            <img src="{{asset('assets/images/about/who-we-are/Rectangle 57.png')}}" class="w-100" alt="Image">
                         </div>
                         <div class="col-md-4 subimage">
-                            <img src="assets/images/about/who-we-are/Rectangle 58.png" class="w-100" alt="">
+                            <img src="{{asset('assets/images/about/who-we-are/Rectangle 58.png')}}" class="w-100" alt="Image">
                         </div>
                         <div class="col-md-4 subimage">
-                            <img src="assets/images/about/who-we-are/Rectangle 59.png" class="w-100" alt="">
+                            <img src="{{asset('assets/images/about/who-we-are/Rectangle 59.png')}}" class="w-100" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -84,18 +84,18 @@
                             </div>
                         </div>
                         <div class="col-lg-5 ov-img">
-                            <img class="w-100" src="assets/images/about/vision/Rectangle 61.png" alt="">
+                            <img class="w-100" src="{{asset('assets/images/about/vision/Rectangle 61.png')}}" alt="Image">
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-md-4 subimage">
-                            <img src="assets/images/about/vision/Rectangle 62.png" class="w-100" alt="">
+                            <img src="{{asset('assets/images/about/vision/Rectangle 62.png')}}" class="w-100" alt="Image">
                         </div>
                         <div class="col-md-4 subimage">
-                            <img src="assets/images/about/vision/Rectangle 63.png" class="w-100" alt="">
+                            <img src="{{asset('assets/images/about/vision/Rectangle 63.png')}}" class="w-100" alt="Image">
                         </div>
                         <div class="col-md-4 subimage">
-                            <img src="assets/images/about/vision/Rectangle 64.png" class="w-100" alt="">
+                            <img src="{{asset('assets/images/about/vision/Rectangle 64.png')}}" class="w-100" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                 <div class="row justify-content-center align-items-center">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-lg-5 om-img">
-                            <img class="w-100" src="assets/images/about/who-we-are/Rectangle 56.png" alt="">
+                            <img class="w-100" src="{{asset('assets/images/about/who-we-are/Rectangle 56.png')}}" alt="Image">
                         </div>
                         <div class="col-lg-7 om-detail">
                             <div class="row  h-100 mx-0">
@@ -124,13 +124,13 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-md-4 subimage">
-                            <img src="assets/images/about/who-we-are/Rectangle 57.png" class="w-100" alt="">
+                            <img src="{{asset('assets/images/about/who-we-are/Rectangle 57.png')}}" class="w-100" alt="Image">
                         </div>
                         <div class="col-md-4 subimage">
-                            <img src="assets/images/about/who-we-are/Rectangle 58.png" class="w-100" alt="">
+                            <img src="{{asset('assets/images/about/who-we-are/Rectangle 58.png')}}" class="w-100" alt="Image">
                         </div>
                         <div class="col-md-4 subimage">
-                            <img src="assets/images/about/who-we-are/Rectangle 59.png" class="w-100" alt="">
+                            <img src="{{asset('assets/images/about/who-we-are/Rectangle 59.png')}}" class="w-100" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                         @foreach($ourclient as $value)
                         <div class="item py-3" style="border-left: 1px solid #9c9999;">
                             @if(!empty($value->image))
-                            <img src="/{{$value->image->image_location}}/{{$value->image->image_name}}" class="h-auto w-100" alt="">
+                            <img src="/{{$value->image->image_location}}/{{$value->image->image_name}}" class="h-auto w-100" alt="Image">
                             @endif
                         </div>
                         @endforeach
@@ -165,7 +165,7 @@
                         <div class="row">
                             <div class="ot-image p-0">
                                 @if(!empty($value->image))
-                                <img src="{{$value->image->image_location}}/{{$value->image->image_name}}" alt="try.jpg"
+                                <img src="{{$value->image->image_location}}/{{$value->image->image_name}}" alt="Image"
                                     class="ot-img h-100 w-100">
                                     @endif
                             </div>

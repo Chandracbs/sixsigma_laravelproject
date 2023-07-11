@@ -56,7 +56,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 
         <!-- custom javascript -->
-        <script src="assets/js/script.js"></script>
+        <script src="{{asset('assets/js/script.js')}}"></script>
 
         {{-- Toastr messages --}}
         <script>

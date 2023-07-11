@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <div class="logo">
-                <a href="{{route('home')}}"><img src="assets/images/sixsigmalogo.png" class="img-fluid main-logo"
+                <a href="{{route('home')}}"><img src="{{asset('assets/images/sixsigmalogo.png')}}" class="img-fluid main-logo"
                         alt=""></a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

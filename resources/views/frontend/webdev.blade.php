@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="wd-image">
-                        <img src="assets/images/web development/web-development 1.png" class="w-100" alt="">
+                        <img src="{{asset('assets/images/web development/web-development 1.png')}}" class="w-100" alt="">
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             <div class="row frontend-main mt-5 align-items-center">
                 <div class="col-md-4">
                     <div class="frontend-image">
-                        <img src="assets/images/web development/front-end.png" class="w-100" alt="">
+                        <img src="{{asset('assets/images/web development/front-end.png')}}" class="w-100" alt="">
                     </div>
                 </div>
                 <div class="size-box col-md-1"></div>
@@ -83,7 +83,7 @@
                 <div class="size-box col-md-1"></div>
                 <div class="col-md-4">
                     <div class="backend-image">
-                        <img src="assets/images/web development/backend.png" class="w-100" alt="">
+                        <img src="{{asset('assets/images/web development/backend.png')}}" class="w-100" alt="">
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
             <div class="row frontend-main mt-5 align-items-center">
                 <div class="col-md-4">
                     <div class="frontend-image">
-                        <img src="assets/images/web development/front-end.png" class="w-100" alt="">
+                        <img src="{{asset('assets/images/web development/front-end.png')}}" class="w-100" alt="">
                     </div>
                 </div>
                 <div class="size-box col-md-1"></div>
@@ -124,7 +124,7 @@
                 <div class="size-box col-md-1"></div>
                 <div class="col-md-4">
                     <div class="backend-image">
-                        <img src="assets/images/web development/backend.png" class="w-100" alt="">
+                        <img src="{{asset('assets/images/web development/backend.png')}}" class="w-100" alt="">
                     </div>
                 </div>
             </div>

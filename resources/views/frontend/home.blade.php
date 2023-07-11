@@ -15,7 +15,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assets/images/hero-image.png" class="d-block w-100" alt="...">
+                        <img src="{{asset('assets/images/hero-image.png')}}" class="d-block w-100" alt="...">
                         <div class="carousel-caption">
                             <h1>A Leading Technology Service Provider</h1>
                             <p>Let's talk quality. You ask, we deliver</p>
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/hero-image.png" class="d-block w-100" alt="...">
+                        <img src="{{asset('assets/images/hero-image.png')}}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h1>A team of experts at your service</h1>
                             <p>We commit ourselves to quality excellence. Watch your concepts come alive.</p>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/hero-image.png" class="d-block w-100" alt="...">
+                        <img src="{{asset('assets/images/hero-image.png')}}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h1>The devoted quality purveyors</h1>
                             <p>The fine art of quality at your price.</p>
@@ -86,7 +86,7 @@
         <div class="container whoweare-section">
             <div class="row whoweare-row ">
                 <div class="col-md-6 wwr-image">
-                    <img src="assets/images/who-we-are.png" class="wwr-img" alt="">
+                    <img src="{{asset('assets/images/who-we-are.png')}}" class="wwr-img" alt="Image">
                 </div>
                 <div class="col-md-6 wwr-contain">
                     <div class="row">
@@ -132,7 +132,7 @@
                                 <div class="box col-md-6">
                                     <div class="box-image">
                                         <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
-                                            class="icon" alt="">
+                                            class="icon" alt="Image">
                                     </div>
                                     <div class="box-detail">
                                         <div class="title">
@@ -171,7 +171,7 @@
                             <div class="col-md-3 wtd-contain">
                                 <div class="row">
                                     <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
-                                        alt="">
+                                        alt="Image">
                                     <h3 class="title">{{ $value->name }}</h3>
 
 
@@ -217,7 +217,7 @@
                                 <div class="row col-lg-2 col-sm-4">
                                     <div class="pwf-img mb-sm-3">
                                         <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
-                                            alt="">
+                                            alt="Image">
                                     </div>
                                     <h6>{{ $value->name }}</h6>
                                 </div>
@@ -242,7 +242,7 @@
                             <div class="tech-item">
                                 <div class="twe-image">
                                     <img src="/{{ $value->image->image_location }}/{{ $value->image->image_name }}"
-                                        alt="">
+                                        alt="Image">
                                 </div>
                             </div>
                         @endforeach
@@ -260,7 +260,7 @@
                 <div class="row messagefd-row">
                     <div class="col-md-4">
                         <div class="mfd-image">
-                            <img src="assets/images/md.jpg" alt="" class="mfd-img">
+                            <img src="{{asset('assets/images/md.jpg')}}" alt="Image" class="mfd-img">
                         </div>
                     </div>
 
@@ -300,8 +300,8 @@
                         <div class="row head-logo">
                             <div class="row">
                                 <div class="logo col-md-6">
-                                    <img src="assets/images/gadget-frame-logo.png" class="img-fluid w-100"
-                                        alt="">
+                                    <img src="{{asset('assets/images/gadget-frame-logo.png')}}" class="img-fluid w-100"
+                                        alt="Image">
                                 </div>
                                 <div class="col-md-6">
                                     <a href="https://gadgetframe.com/" class="btn btn-outline-primary"
@@ -324,13 +324,13 @@
                                     provide, their location and contact details.</p>
                             </div>
                             <div class="op1-image">
-                                <img src="assets/images/gadget-frame-2.png" alt="">
+                                <img src="{{asset('assets/images/gadget-frame-2.png')}}" alt="Image">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="op1-image">
-                            <img src="assets/images/gadget-frame-1.png" alt="">
+                            <img src="{{asset('assets/images/gadget-frame-1.png')}}" alt="Image">
                         </div>
                     </div>
                 </div>
