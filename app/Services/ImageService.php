@@ -30,7 +30,7 @@ class ImageService
             $previousImage->save();
         }
         else{
-            $this->store($model,$image,$savePath , $resize);
+            $this->store($model,$image,$savePath , $resize, $h, $w);
         }
         }
 
