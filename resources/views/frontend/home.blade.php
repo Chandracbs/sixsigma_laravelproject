@@ -401,6 +401,13 @@
                                             <span class="text-xs text-danger">{{ $errors->first('message') }}</span>
                                         @endif
                                     </div>
+                                    <div class="mt-2 col-lg-6 phone-number box">
+                                        <strong>ReCaptcha:</strong>
+                                        <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_SITE_KEY') }}"></div>
+                                        @if ($errors->has('g-recaptcha-response'))
+                                            <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                                        @endif
+                                    </div>
 
                                     <div class="submit-btn mt-3">
                                         <button type="submit" value="submit">Submit</button>

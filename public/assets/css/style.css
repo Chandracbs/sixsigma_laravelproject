@@ -2317,3 +2317,46 @@
 
 
 
+
+  /* CSS STYLE FOR PRIVACY AND POLICY PAGE  added by Chandra  i.e.  policies.blade.php */
+
+.container_policies{
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.ftr-jsg{
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container_policies p{
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    .container_policies {
+      max-width: 768px;
+    }
+
+    .container_policies p {
+      font-size: 18px;
+    }
+  }
+
+  /* Styles for desktop screens */
+  @media (min-width: 1024px) {
+    .container_policies {
+      max-width: 980px;
+    }
+
+    .container_policies p {
+      font-size: 20px;
+    }
+  }
+
+
+
+
+
+

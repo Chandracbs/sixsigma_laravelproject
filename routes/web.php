@@ -77,6 +77,11 @@ Route::post('/contact/store',[IndexController::class,'contact_store'])->name('co
 Route::post('/home',[IndexController::class,'contactus'])->name('contactUs.send');
 Route::post('/contact',[IndexController::class,'consultation'])->name('consultation.send');
 
+// For Privacy Policy in footer
+Route::get('/policy',[IndexController::class,'privatePolicy'])->name('policies');
+
+Route::get('/try',[IndexController::class,'try'])->name('try');
+
 
 
 

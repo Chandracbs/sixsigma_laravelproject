@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\ContactUsController;
 
+use App\Rules\ReCaptcha;
+
 class IndexController extends Controller
 {
     public function home(){
@@ -63,7 +65,8 @@ class IndexController extends Controller
             'phone'=>'required|max:15|min:7|regex:/^([0-9\s\-\+\(\)]*)$/',
             'email'=>'required|email|max:255',
             'message'=>'required',
-            'interest'=>'required|max:50'
+            'interest'=>'required|max:50',
+            'g-recaptcha-response'=>[new ReCaptcha]
         ],[
             'phone.regex'=>'Please do not enter special characters',
             'interest.required'=>'Please select your interest'
@@ -92,13 +95,17 @@ class IndexController extends Controller
 
     // For Mail
     public function contactus(Request $request){
-        $validatedValue = $request->validate([
+        $validator = Validator::make($request->all(),[
             'name'=>'required|max:150',
             'email'=>'required|max:255|email',
-            'message'=>'required'
+            'message'=>'required',
+            'g-recaptcha-response'=>[new ReCaptcha]
         ]);
 
-        $contactMail = new ContactUsMail($validatedValue);
+        if($validator->fails()){
+            return back()->withFragment('#contactform')->withErrors($validator)->withInput();
+        }
+        $contactMail = new ContactUsMail($request->all());
 
         $contactMail->from($request->email, $request->name);
 
@@ -115,7 +122,8 @@ class IndexController extends Controller
             'company_name'=>'required|max:150',
             'c_email'=>'required|max:255|email',
             'c_contact'=>'required|max:15|min:7|regex:/^([0-9\s\-\+\(\)]*)$/',
-            'c_message'=>'required'
+            'c_message'=>'required',
+            'g-recaptcha-response'=>[new ReCaptcha]
         ],[
             'c_email.email'=>'The email field must be a valid email address.',
             'c_contact.numeric'=>'The contact field must be a number',
@@ -139,5 +147,15 @@ class IndexController extends Controller
 
     public function location(){
         return redirect()->route('contact');
+    }
+
+    public function privatePolicy(){
+        $title = "Six Sigma Inc - Private Policy";
+        return view('frontend.policies',compact('title'));
+    }
+
+    public function try(){
+        $title = "Six Sigma Inc - Try";
+        return view('frontend.try',compact('title'));
     }
 }

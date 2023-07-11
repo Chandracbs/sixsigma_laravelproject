@@ -9,6 +9,8 @@
                         <a href="{{route('about')}}" style="text-decoration: none"><h5>About</h5></a>
                         <a href="{{route('services')}}" style="text-decoration: none"><h5>What We Do</h5></a>
                         <a href="{{route('contact')}}" style="text-decoration: none"><h5>Contact</h5></a>
+                        <a href="{{route('policies')}}" style="text-decoration: none"><h5>Privacy Policy</h5></a>
+                        <a href="{{route('try')}}" style="text-decoration: none"><h5>Try</h5></a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-4 services">
@@ -71,7 +73,7 @@
     <div class="container footer-copyright">
         <div class="row">
             <div class="col-md-10 footer-right  py-4">
-                <h5>2023-Six Sigma Inc. Pvt. Ltd.All Rights Reserved.</h5>
+                <h5>© 2023-Six Sigma Inc. Pvt. Ltd.All Rights Reserved.</h5>
             </div>
             <div class="col-md-2 footer-logo">
                 <a href="{{route('home')}}" style="text-decoration: none"><img src="assets/images/sixsigmalogo.png" alt="" class="logo"></a>
